@@ -32,4 +32,3 @@ version tag is pushed:
 
 Both authenticate with a `write_repository`-scoped token, so a leaked CI token
 cannot read this project's API or reach anything else in the group.
-
