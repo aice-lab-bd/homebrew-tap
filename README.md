@@ -3,6 +3,18 @@
 One tap for every aice-lab command-line tool.
 
 ```bash
+brew install aice-lab-bd/tap/devlog
+brew install aice-lab-bd/tap/envkit
+```
+
+No `brew tap` step is needed. Homebrew expands `aice-lab-bd/tap` to the GitHub
+mirror at [aice-lab-bd/homebrew-tap](https://github.com/aice-lab-bd/homebrew-tap).
+It only expands short tap names against GitHub, which is why the mirror exists.
+
+This GitLab project stays the source of truth. A push mirror copies every commit
+to GitHub, so the two never drift. To tap from GitLab directly instead:
+
+```bash
 brew tap aice-lab/tap https://gitlab.com/aice-lab/homebrew-tap.git
 ```
 
@@ -10,11 +22,6 @@ brew tap aice-lab/tap https://gitlab.com/aice-lab/homebrew-tap.git
 |---|---|---|
 | `envkit` | Back up env files to git, with keychain-backed secrets | [aice-lab/envkit](https://gitlab.com/aice-lab/envkit) |
 | `devlog` | Generate changelogs from git history, optionally with an LLM | [aice-lab/devlog](https://gitlab.com/aice-lab/devlog) |
-
-```bash
-brew install envkit
-brew install devlog
-```
 
 ## For maintainers
 
@@ -32,3 +39,8 @@ version tag is pushed:
 
 Both authenticate with a `write_repository`-scoped token, so a leaked CI token
 cannot read this project's API or reach anything else in the group.
+
+The GitHub mirror is configured under Settings > Repository > Mirroring
+repositories. It pushes over SSH with a GitLab-generated key, registered on the
+GitHub side as a write deploy key. That key reaches the mirror repo and nothing
+else. CI never writes to GitHub directly.
