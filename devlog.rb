@@ -4,15 +4,15 @@
 class Devlog < Formula
   desc "AI-powered development log generator for git repositories"
   homepage "https://gitlab.com/aice-lab/devlog"
-  version "2.2.5"
+  version "2.3.0"
   license "MIT"
 
   # Prebuilt release binaries: installing needs no Rust toolchain. Only the
   # two platforms the release pipeline builds are offered, and an
   # unsupported arch fails outright rather than silently compiling.
   if OS.mac?
-    url "https://gitlab.com/aice-lab/devlog/-/jobs/artifacts/v2.2.5/raw/release_artifacts/devlog-macos-aarch64?job=artifact:macos-aarch64"
-    sha256 "878c33734058530ffbc22a6b2566514401caaa2b920668ee7b2f4a51300160fd"
+    url "https://gitlab.com/aice-lab/devlog/-/jobs/artifacts/v2.3.0/raw/release_artifacts/devlog-macos-aarch64?job=artifact:macos-aarch64"
+    sha256 "4017b96273a07ec18f04a980415093651637868fcbab9382ebb9138e4c65d209"
 
     depends_on arch: :arm64
 
@@ -20,12 +20,12 @@ class Devlog < Formula
     # executable, so it goes into the same bin. Without it the on-device
     # provider reports itself unavailable; every other provider is unaffected.
     resource "devlog-afm" do
-      url "https://gitlab.com/aice-lab/devlog/-/jobs/artifacts/v2.2.5/raw/release_artifacts/devlog-afm?job=artifact:macos-aarch64"
+      url "https://gitlab.com/aice-lab/devlog/-/jobs/artifacts/v2.3.0/raw/release_artifacts/devlog-afm?job=artifact:macos-aarch64"
       sha256 "3be52b87c9cbae8d1f7e5a9b487436d4b8060d260ad85f7cd138dac09910a126"
     end
   else
-    url "https://gitlab.com/aice-lab/devlog/-/jobs/artifacts/v2.2.5/raw/release_artifacts/devlog-linux-x86_64?job=artifact:linux-x86_64"
-    sha256 "dae59fcae95ae6a055637edf2cf97382e9768528353ba56e4cee1595d182b4d4"
+    url "https://gitlab.com/aice-lab/devlog/-/jobs/artifacts/v2.3.0/raw/release_artifacts/devlog-linux-x86_64?job=artifact:linux-x86_64"
+    sha256 "5829d61df1dfc5ae7bd99700ae799578789b382a1de774001631e0b58eb2cf80"
 
     depends_on arch: :x86_64
   end
