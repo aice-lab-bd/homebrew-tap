@@ -5,23 +5,23 @@
 class Envkit < Formula
   desc "Back up env files to git, with keychain-backed secrets"
   homepage "https://gitlab.com/aice-lab/envkit"
-  version "0.4.0"
+  version "0.5.0"
   license "MIT"
 
   depends_on "pass" if OS.linux?
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://gitlab.com/aice-lab/envkit/-/releases/v0.4.0/downloads/envkit_0.4.0_darwin_amd64.tar.gz"
-      sha256 "6d81c1bb3582005e4c861af34dee997bd7e69005e533d3d9dbe2a86b2474ac43"
+      url "https://gitlab.com/aice-lab/envkit/-/releases/v0.5.0/downloads/envkit_0.5.0_darwin_amd64.tar.gz"
+      sha256 "0132e9e96feb5c86e0fa69d2ac530118d18beb77248cbfb8553b35478f80b566"
 
       define_method(:install) do
         bin.install "envkit"
       end
     end
     if Hardware::CPU.arm?
-      url "https://gitlab.com/aice-lab/envkit/-/releases/v0.4.0/downloads/envkit_0.4.0_darwin_arm64.tar.gz"
-      sha256 "38998a78e834a64a41e2cbbb10c49e7f19b09ff0c720b3219773fd45e2a7c9e1"
+      url "https://gitlab.com/aice-lab/envkit/-/releases/v0.5.0/downloads/envkit_0.5.0_darwin_arm64.tar.gz"
+      sha256 "27ac6c37652cfdc150e250f800906d5d2425a3d1e144198da1b05f088dae285a"
 
       define_method(:install) do
         bin.install "envkit"
@@ -31,15 +31,15 @@ class Envkit < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://gitlab.com/aice-lab/envkit/-/releases/v0.4.0/downloads/envkit_0.4.0_linux_amd64.tar.gz"
-      sha256 "f3079fa2a390112c2e8099a164147af9bcdf22c82b942cfa568fc7c7a3583bbb"
+      url "https://gitlab.com/aice-lab/envkit/-/releases/v0.5.0/downloads/envkit_0.5.0_linux_amd64.tar.gz"
+      sha256 "d1d30032e5005fec928f1278700fab541168e82142c29eba34d1f7bf05628c5c"
       define_method(:install) do
         bin.install "envkit"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://gitlab.com/aice-lab/envkit/-/releases/v0.4.0/downloads/envkit_0.4.0_linux_arm64.tar.gz"
-      sha256 "4fa796f0ed074b11a1326ff22bea096145d0bfe7bbd0d85cb3751b4a33fb9129"
+      url "https://gitlab.com/aice-lab/envkit/-/releases/v0.5.0/downloads/envkit_0.5.0_linux_arm64.tar.gz"
+      sha256 "9cf76f586f7afaf4c4823b13209f53d5a2ea4f1daeb1ffdb75a7386b25c37138"
       define_method(:install) do
         bin.install "envkit"
       end
